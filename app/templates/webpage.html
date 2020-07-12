@@ -1,0 +1,34 @@
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+    <form method="POST",action="{{ url_for('orders') }}">
+
+
+
+    <div class="topnav a">
+
+    <h2><small>Search your order here</small></h2>
+    <input class="form-control" name="search" placeholder="Search Here" autocomplete="off" autofocus="autofocus" type="text">
+
+        <input type="date"  name="searchtime" >
+        <input type="submit" value = 'Submit'>
+
+
+
+</div>
+
+        {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+
+ <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+</head><body><script type="text/javascript">$(document).ready(function(){$('table').DataTable({
+    "pageLength": 5
+});});</script>
+</body></html>
+</form>
+
